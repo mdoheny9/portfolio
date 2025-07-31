@@ -27,7 +27,7 @@ h1 {
     color: #0b8bbe;
 }
 
-.item {
+.open-modal-btn {
     padding: 10px;
     background-color: #c7c7c7;
     color: #0261bb;
@@ -39,7 +39,7 @@ h1 {
     transition: transform 0.25s ease-in-out;
 }
 
-.item:hover {
+.open-modal-btn:hover {
   transform: scale(1.1); 
 }
 

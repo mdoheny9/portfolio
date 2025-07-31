@@ -1,25 +1,35 @@
-// Get the modal
-var modal = document.getElementById("mySQLmodal");
+// Get all buttons that open modals
+const openModalButtons = document.querySelectorAll('.open-modal-btn');
 
-// Get the button that opens the modal
-var btn = document.getElementById("SQLbtn");
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modalId = button.dataset.modalId; // Get the ID from the data attribute
+        const modal = document.getElementById(modalId); // Find the corresponding modal
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+        if (modal) {
+            modal.style.display = 'block'; // Show the modal
+        }
+    });
+});
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+// Logic for closing modals (e.g., close button or click outside)
+const closeButtons = document.querySelectorAll('.close-modal-btn'); // Assuming close buttons have this class
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+closeButtons.forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        const modal = closeBtn.closest('.modal'); // Find the parent modal
+        if (modal) {
+            modal.style.display = 'none'; // Hide the modal
+        }
+    });
+});
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
