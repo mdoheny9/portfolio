@@ -96,18 +96,34 @@ body {
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar a:hover {
-    background-color: #000;
+    background-color: #6e6e6e;
     border-radius: 1rem;
 }
 
-/* to-do: */
+.navbar .active:hover {
+    background-color: #1051d3;
+}
+
+.navbar .icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+    margin-right: 0.5rem;
+}
+
+.navbar a:hover .icon {
+    content: url("../../gfx/staronhover.png");
+}
+
 .active {
     background-color: #003399;
     border-radius: 1rem;
