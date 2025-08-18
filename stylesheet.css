@@ -30,5 +30,6 @@
 
 /* to-do: */
 .active {
-    background-color: #003399 ;
+    background-color: #003399;
+    border-radius: 1rem;
 }
