@@ -13,6 +13,12 @@ body {
     background-color: rgb(64,64,64);
     margin-right: 10rem;
     margin-left: 10rem;
+
+    background-image: url("backgrounds/landscape01.png");
+    background-size: cover;         /* fills screen while keeping aspect ratio */
+    background-position: center;
+    height: 250px; /* change ts please T_T */
+    background-repeat: no-repeat; /* change ts please T_T */
 }
 
 /* navheader stuff */
@@ -62,6 +68,8 @@ body {
     border: 1rem solid transparent;
     border-image: url("borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
+
+    margin-bottom: 1rem;
 }
 
 .navbar a {
@@ -97,4 +105,16 @@ body {
 .navbar .active {
     background-color: rgb(0, 85, 255, .7);
     border-radius: 1rem;
+}
+
+/* content */
+.content {
+    color: #c7c7c7;
+    border: 1rem solid transparent;
+    border-image: url("borders/panel-transparent-center-030-dark.png");
+    border-image-slice: 13 fill;
+}
+
+.content a {
+    color: #40E0D0;
 }
