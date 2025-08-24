@@ -1,0 +1,38 @@
+---
+---
+<div class = "navbar">
+    <!--Home button -->
+    <a href = index.html>
+        <img class="icon" src="../../assets/gfx/star.png" alt="">
+        Home
+    </a>
+    <!--Portfolio button -->
+    <a href=portfolio.html>
+        <img class="icon" src="../../assets/gfx/star.png" alt="">
+        Portfolio
+    </a>
+    <a href=photography.html>
+        <img class="icon" src="../../assets/gfx/star.png" alt="">
+        Photography
+    </a>
+    <a href="#">
+        <img class="icon" src="../../assets/gfx/star.png" alt="">
+        Contact
+    </a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+                // Get the current page path (e.g., "index.html", "portfolio.html")
+                const currentPage = window.location.pathname.split("/").pop();
+
+                // Loop through all navbar links
+                document.querySelectorAll(".navbar a").forEach(link => {
+                    const linkPage = link.getAttribute("href").split("/").pop();
+
+                    if (linkPage === currentPage) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+</script>

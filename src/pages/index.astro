@@ -1,16 +1,27 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro"
 
+const pageTitle = "Welcome!"
+const bgImage = "../../assets/backgrounds/landscape01.png"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle = {pageTitle} bgImage = {bgImage}>
+	<a href = "https://github.com/mdoheny9" target="_blank">
+		GitHub
+	</a> /
+	<a href = "https://www.linkedin.com/in/megan-doheny" target="_blank">
+		LinkedIn
+	</a> /
+	<a href = "mailto:megand0905@gmail.com" target="_blank">
+		email
+	</a>
+	<p>
+		Hi, my name is Megan and this is my website! 
+	</p>
+	<a href = "pages/portfolio/portfolio.html">
+		My Portfolio! /
+	</a>
+	<a href = "pages/weather/weatherpage.html">
+		See the weather
+	</a>
+	<p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p>
+</BaseLayout>
