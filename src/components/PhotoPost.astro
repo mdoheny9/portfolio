@@ -1,0 +1,85 @@
+---
+// PhotoPost.astro
+const { title, description, image, date, camera } = Astro.props
+---
+<!-- Thumbnail -->
+<img 
+  src=`../../assets/photos/${image}`
+  alt={title} 
+  class="thumbnail" 
+  onclick="document.getElementById('modal-id').classList.add('active')" 
+/>
+
+<!-- Modal -->
+<div id="modal-id" class="modal" onclick="this.classList.remove('active')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="document.getElementById('modal-id').classList.remove('active')">&times;</span>
+    <img src=`../../assets/photos/${image}` alt={title} />
+    <div class = "photo-info">
+        <!-- <h2>{title}</h2> -->
+        <p>{description}</p>
+        <p style="color:rgba(170,170,170,.6)">Taken on {date} using {camera}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+    .thumbnail {
+        padding: .5rem;
+        width: 22rem;
+        transition: transform 0.1s ease-in-out;
+    }
+    .thumbnail:hover {
+        transform: scale(0.95); 
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(0,0,0,0.6);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(6px); 
+
+        justify-content: center;
+        align-items: center;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+        display: flex;
+        width: 65%;
+        /* margin: 5rem; */
+        /* size: 65%; */
+        /* max-height: 65vh; */
+        padding: 20px;
+        gap: 1rem;
+
+        border: 1rem solid transparent;
+        border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
+        border-image-slice: 13 fill;
+    }
+    .modal-content img {
+        max-width: 65%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* optional: center it */
+        border-radius: .5rem; /* optional: softer edges */
+    }
+    .photo-info {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        color: #aaa;
+    }
+    .close-btn {
+        float: right;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+</style>
