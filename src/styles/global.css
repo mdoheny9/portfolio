@@ -185,6 +185,27 @@ body {
     padding: 1rem;
     color: #aaa;
 }
+/* .photo-info button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+    background-color: transparent;
+    color: #aaa;
+}
+.photo-info .icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+} */
+.project-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    border: 1rem solid transparent;
+    border-image: url("../../assets/borders/panel-007-transparent.png");
+    border-image-slice: 14 fill;
+}
+
 .close-btn {
     float: right;
     cursor: pointer;

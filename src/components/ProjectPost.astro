@@ -1,0 +1,26 @@
+---
+const {title, description, image, link} = Astro.props;
+const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
+---
+<div class="thumbnail-info project-container"
+    onclick={`document.getElementById('${modalId}').classList.add('active')`}>
+    <h3>
+        {title}
+    </h3>
+</div>
+
+<!-- Modal -->
+<div id={modalId} class="modal" onclick="this.classList.remove('active')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick={`document.getElementById('${modalId}').classList.remove('active')`}>&times;</span>
+    <div class = "photo-info">
+        <h2>{title}</h2>
+        <img src={`../../assets/photos/${image}`} alt={title} />
+        <p>{description}</p>
+        <!-- <button>
+            <img class = "icon" src="../../assets/gfx/github.png"/>
+            View on Github
+        </button> -->
+    </div>
+  </div>
+</div>
