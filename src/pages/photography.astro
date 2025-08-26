@@ -4,6 +4,7 @@ import PhotoPost from "../components/PhotoPost.astro"
 
 const pageTitle = "My photos"
 const bgColour = "#33313f"
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
@@ -13,5 +14,11 @@ const bgColour = "#33313f"
         in the past few months, so the ones posted here are any that I find
         relatively pleasant to look at. Feast your eyes upon some mid photography!!!
     </p>
-    <PhotoPost title = "Holivia" image = "holivia.jpg" description = "wow this sure is awesome" date = "2022-07-01" camera = "Nikon D3100"/>
+    <div>
+        {allPosts.map((post:any) => {
+            const {title, pubDate, description, camera, image, tags} = post.frontmatter;
+            return (<PhotoPost title = {title} image = {image.url} description = {description} date = {pubDate} camera = {camera}/>);
+        })}
+    </div>
+    <!-- <PhotoPost title = "Holivia" image = "holivia.jpg" description = "wow this sure is awesome" date = "2022-07-01" camera = "Nikon D3100"/> -->
 </BaseLayout>

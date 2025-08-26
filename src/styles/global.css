@@ -14,14 +14,13 @@ body {
     margin-right: 10rem;
     margin-left: 10rem;
 
-    /* background-image: url("../../assets/backgrounds/landscape01.png"); */
-    background-size: cover;         /* fills screen while keeping aspect ratio */
+    background-size: cover;
     background-position: center;
-    height: 250px; /* change ts please T_T */
-    background-repeat: no-repeat; /* change ts please T_T */
+    height: 250px; /* to-do */
+    background-repeat: no-repeat; /* to-do */
 }
 
-/* navheader stuff */
+/* ========= navheader ========= */
 .navheader {
     display: flex;
     justify-content: flex-start;
@@ -58,7 +57,7 @@ body {
     width: 1.5em;
 }
 
-/* navbar stuff */
+/* ========= navbar ========= */
 .navbar {
     display: flex;
     justify-content: center; 
@@ -107,7 +106,7 @@ body {
     border-radius: 1rem;
 }
 
-/* content */
+/* ========= page content ========= */
 .content {
     color: #c7c7c7;
     border: 1rem solid transparent;
@@ -117,4 +116,87 @@ body {
 
 .content a {
     color: #40E0D0;
+}
+
+/* ========= photo modal ========= */
+.thumbnail {
+    position: relative;
+    display: inline-block;
+}
+/* .tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+} */
+.thumbnail-info {
+    padding: .5rem;
+    width: 22rem;
+    transition: transform 0.1s ease-in-out;
+}
+.thumbnail-info:hover {
+    transform: scale(0.95); 
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(6px); 
+
+    justify-content: center;
+    align-items: center;
+}
+.modal.active { display: flex; }
+.modal-content {
+    display: flex;
+    width: 65%;
+    padding: 20px;
+    gap: 1rem;
+
+    border: 1rem solid transparent;
+    border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
+    border-image-slice: 13 fill;
+}
+.modal-content img {
+    max-width: 65%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: .5rem;
+}
+.photo-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    color: #aaa;
+}
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        width: 65%;
+    }
+    .modal-content img {
+        max-width: 85%;
+    }
 }
