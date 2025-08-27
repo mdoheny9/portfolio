@@ -13,11 +13,6 @@ body {
     background-color: rgb(64,64,64);
     margin-right: 10rem;
     margin-left: 10rem;
-
-    background-size: cover;
-    background-position: center;
-    height: 250px; /* to-do */
-    background-repeat: no-repeat; /* to-do */
 }
 
 /* ========= navheader ========= */
@@ -138,33 +133,31 @@ body {
     transform: scale(0.95); 
 }
 .project-container {
-    margin-bottom: 20px;
-    display: block;
-    justify-content: center;
+    display: inline-block;
+    text-align: center;
+
+    margin: 1rem;
+    width: 19rem;
+
     border: 1rem solid transparent;
     border-image: url("../../assets/borders/panel-007-transparent.png");
     border-image-slice: 14 fill;
+
+    transition: transform 0.1s ease-in-out;
+    /* margin-bottom: 20px;
+    display: inline-block;
+    justify-content: center;
+    border: 1rem solid transparent;
+    border-image: url("../../assets/borders/panel-007-transparent.png");
+    border-image-slice: 14 fill; */
+}
+.project-container:hover {
+    transform: scale(0.95); 
 }
 .gallery {
-    /* display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: flex-start; */
-      /* display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-template-rows: masonry; */
   column-width: 300px;   
   column-gap: 1rem;
 }
-
-/*.gallery {
-    display: grid; 
-    align-items: start; 
-    column-gap: 24px; 
-    grid-template-columns: repeat(3, minmax(0px, 1fr));
-} */
-
 .modal {
     display: none;
     position: fixed;
@@ -199,6 +192,15 @@ body {
 .modal-content img {
     max-width: 65%;
     max-height: 95%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: .5rem;
+}
+.modal-content .portfolio {
+    max-width: 75%;
+    max-height: 60%;
     object-fit: contain;
     width: auto;
     height: auto;
@@ -277,6 +279,15 @@ body {
     align-items: center;
     margin: 2rem;
     text-decoration: none;
+    color: rgba(238,232,170, .4);
+    background-color: rgba(238,232,170, .1);
+    padding: .75rem;
+    padding-right: 1rem;
+    border-radius: 2rem;
+}
+.contact-list a:hover {
+    color: rgba(250, 240, 187, 1);
+    background-color: rgba(184,134,11, .3);
 }
 .contact-list a i {
     font-size: 2rem;

@@ -3,14 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import PortfolioPost from "../components/PortfolioPost.astro"
 
 const pageTitle = "My portfolio"
-const bgColour = "#778899"
+const bgColour = "#2b3f42"
+const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
 const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
 ---
-<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
+<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour} bgImage = {bgImage}>
     <p>
         this is a portfolio of all my technical projects... there is much to come dont worry!
     </p>
-    <div class = "gallery">
+    <div class = "project-wall">
         {allProjects.map((post:any) => {
             const {title, description, image, link} = post.frontmatter;
             return (<PortfolioPost title = {title} image = {image.url} description = {description} link = {link}/>);

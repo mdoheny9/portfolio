@@ -16,9 +16,9 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
     <span class="close-btn" onclick={`document.getElementById('${modalId}').classList.remove('active')`}>&times;</span>
     <div class = "photo-info">
         <h2>{title}</h2>
-        <img src={`../../assets/photos/${image}`} alt={title} />
         <p>{description}</p>
         <GitHubLink link={link}/>
     </div>
+    {image && (<img class = "portfolio" src={`../../assets/photos/${image}`} alt={title}/>)}
   </div>
 </div>
