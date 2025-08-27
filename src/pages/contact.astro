@@ -1,13 +1,14 @@
 ---
-import Navigation from "./Navigation.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const pageTitle = "Contact me"
+const bgColour = "#33313f"
 ---
-<div class = "navheader">
-    <!-- mSite59 element -->
-    <img src="../../assets/gfx/bread.png" alt="">
-    <h1>
-        mSite59
-    </h1>
-    <div class = "links">
+<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
+    <p>
+        You can find me on all the platforms below!
+    </p>
+    <div class = "contact-list">
         <a href = "https://github.com/mdoheny9" target="_blank">
             <i class="fa-brands fa-github"></i>
             Github
@@ -20,7 +21,9 @@ import Navigation from "./Navigation.astro"
             <i class="fa-solid fa-envelope"></i>
             Email
         </a>
+        <a href="https://www.instagram.com/megandoheny_/" target = "_blank">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
     </div>
-    
-</div>
-<Navigation/>
+</BaseLayout>
