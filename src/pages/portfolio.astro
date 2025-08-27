@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import ProjectPost from "../components/ProjectPost.astro"
+import PortfolioPost from "../components/PortfolioPost.astro"
 
 const pageTitle = "My portfolio"
 const bgColour = "#778899"
@@ -10,10 +10,10 @@ const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: t
     <p>
         this is a portfolio of all my technical projects... there is much to come dont worry!
     </p>
-    <div class = "flex-container">
+    <div class = "gallery">
         {allProjects.map((post:any) => {
-            const {title, pubDate, description, camera, image, tags} = post.frontmatter;
-            return (<ProjectPost title = {title} image = {image.url} description = {description}/>);
+            const {title, description, image, link} = post.frontmatter;
+            return (<PortfolioPost title = {title} image = {image.url} description = {description} link = {link}/>);
         })}
     </div>
 </BaseLayout>

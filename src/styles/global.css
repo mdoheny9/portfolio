@@ -136,12 +136,28 @@ body {
     z-index: 1000;
 } */
 .thumbnail-info {
+    /* position: relative; */
+    display: inline-block;
     padding: .5rem;
     width: 22rem;
     transition: transform 0.1s ease-in-out;
 }
 .thumbnail-info:hover {
     transform: scale(0.95); 
+}
+.project-container {
+    margin-bottom: 20px;
+    display: block;
+    justify-content: center;
+    border: 1rem solid transparent;
+    border-image: url("../../assets/borders/panel-007-transparent.png");
+    border-image-slice: 14 fill;
+}
+.gallery {
+      display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
 }
 .modal {
     display: none;
@@ -184,28 +200,12 @@ body {
     justify-content: center;
     padding: 1rem;
     color: #aaa;
+    max-width: 65%;
 }
-/* .photo-info button {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0px;
-    background-color: transparent;
-    color: #aaa;
+.links a img {
+    display: inline-flex;
+    margin-right: 0.5rem;
 }
-.photo-info .icon {
-    width: 1.5em;
-    height: 1.5em;
-    background-size: contain;
-} */
-.project-container {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    border: 1rem solid transparent;
-    border-image: url("../../assets/borders/panel-007-transparent.png");
-    border-image-slice: 14 fill;
-}
-
 .close-btn {
     float: right;
     cursor: pointer;
@@ -220,4 +220,31 @@ body {
     .modal-content img {
         max-width: 85%;
     }
+}
+
+/* github button */
+.github-button {
+    display: flex;
+    align-items: center;
+}
+.github-button a {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgba(110, 110, 110, .4);
+    border-radius: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.github-button a:hover {
+    background-color: rgba(0, 85, 255, 1);
+}
+
+.github-button .icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+    margin-right: 0.5rem;
 }
