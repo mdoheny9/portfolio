@@ -5,5 +5,5 @@ image:
     url: ""
     alt: "LCD displaying \"Hello World\" connected to Arduino board"
 link: ""
-tags: [collaboration, web-design]
+tags: ["collaborative", "web-design", "test-automation"]
 ---

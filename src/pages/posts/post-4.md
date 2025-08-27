@@ -1,7 +1,7 @@
 ---
 title: 'Postgresquirrel'
 pubDate: 2025-08-26
-description: 'Overly active squirrel who was very defensive of his nest. He promptly climbed a tree and started throwing acorns at me after I took this.'
+description: 'Overly active squirrel who was very defensive of his nest.'
 camera: 'Nikon D3100'
 image:
     url: '../../assets/photos/squirrel.jpg'

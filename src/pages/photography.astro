@@ -12,10 +12,10 @@ const sortedPosts = allPosts.slice().sort((a:any, b:any) => new Date(b.frontmatt
 
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour} bgImage = {bgImage}>
     <p>
-        A collection of the photos I would like to share with the world!
-        My standards for my own photography have dropped significantly
-        in the past few months, so the ones posted here are any that I find
-        relatively pleasant to look at. Feast your eyes upon some mid photography!!!
+        A collection of some of the photos I have taken that I think are worth sharing.
+    </p>
+    <p>
+        Feel free to show your support by clicking on the image within the pop-up window, which opens the related post on Instagram.
     </p>
     <div class="gallery">
         {sortedPosts.map((post:any) => {

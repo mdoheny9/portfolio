@@ -5,5 +5,5 @@ image:
     url: "../../assets/photos/youngsheldon.png"
     alt: "Report of the TV series Young Sheldon"
 link: "https://github.com/mdoheny9/tv-series-report-generator"
-tags: [python, sql, databases, web-development, web-design]
+tags: ["python", "databases", "web-design"]
 ---

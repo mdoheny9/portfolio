@@ -5,16 +5,103 @@ import PortfolioPost from "../components/PortfolioPost.astro"
 const pageTitle = "My portfolio"
 const bgColour = "#2b3f42"
 const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
+
 const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
+const tags = [...new Set(allProjects.map((project: any) => project.frontmatter.tags).flat())];
 ---
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour} bgImage = {bgImage}>
     <p>
-        this is a portfolio of all my technical projects... there is much to come dont worry!
+        Welcome to my portfolio! Here you’ll find a collection of my technical projects.
     </p>
+    <p>
+        Use the buttons below to filter projects by category, or select All to view everything.
+    </p>
+    <!-- tags -->
+    <div class = "tags">
+        <button class="tag" data-tag="all">All</button>
+        {tags.map((tag) => (
+            <button class="tag" data-tag={tag}>{tag}</button>
+        ))}
+    </div>
+    <!-- projects -->
     <div class = "project-wall">
         {allProjects.map((post:any) => {
-            const {title, description, image, link} = post.frontmatter;
-            return (<PortfolioPost title = {title} image = {image.url} description = {description} link = {link}/>);
+            const {title, description, image, link, tags} = post.frontmatter;
+            return (
+                <div class = "project" data-tags={tags.join(" ")}>
+                    <PortfolioPost title = {title} image = {image.url} description = {description} link = {link}/>
+                </div>);
         })}
     </div>
+    <script>
+        document.querySelectorAll(".tag").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".tag").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const selectedTag = btn.dataset.tag;
+                document.querySelectorAll(".project").forEach(proj => {
+                    const match = selectedTag === "all" || proj.dataset.tags.includes(selectedTag);
+                    proj.hidden = !match; // show if match, hide if not
+                });
+            });
+        });
+    </script>
 </BaseLayout>
+
+<!-- ---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import PortfolioPost from "../components/PortfolioPost.astro"
+
+const pageTitle = "My portfolio"
+const bgColour = "#2b3f42"
+const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
+
+const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
+const tags = [...new Set(allProjects.map((project: any) => project.frontmatter.tags).flat())];
+---
+<BaseLayout pageTitle={pageTitle} bgColour={bgColour} bgImage={bgImage}>
+  <p>
+    this is a portfolio of all my technical projects... there is much to come dont worry!
+  </p>
+-->
+  <!-- tags -->
+  <!-- <div class="tags">
+    <button class="tag" data-tag="all">All</button>
+    {tags.map((tag) => (
+      <button class="tag" data-tag={tag}>{tag}</button>
+    ))}
+  </div> -->
+
+  <!-- (filtered) projects -->
+  <!-- <div class="project-wall">
+    {allProjects.map((post: any) => {
+      const { title, description, image, link, tags } = post.frontmatter;
+      return (
+        <div class="project" data-tags={tags.join(" ")}>
+          <PortfolioPost 
+            title={title} 
+            image={image.url} 
+            description={description} 
+            link={link}
+          />
+        </div>
+      );
+    })}
+  </div>
+
+  <script>
+    document.querySelectorAll(".tag").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const selectedTag = btn.dataset.tag;
+        document.querySelectorAll(".project").forEach(proj => {
+          if (selectedTag === "all" || proj.dataset.tags.includes(selectedTag)) {
+            proj.style.display = "block";
+          } else {
+            proj.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>  -->

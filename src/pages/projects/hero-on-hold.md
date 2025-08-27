@@ -2,8 +2,8 @@
 title: "Hero On Hold"
 description: "A top-down story-based game developed in collaboration with a team of six."
 image:
-    url: ""
-    alt: "LCD displaying \"Hello World\" connected to Arduino board"
+    url: "../../assets/photos/bladee.png"
+    alt: "Main character (bladee) sprite standing in front of portal/door"
 link: "https://github.com/msmijis/Hero-On-Hold"
-tags: [c#, game-dev, collaborative]
+tags: ["c#", "game-dev", "collaborative"]
 ---

@@ -1,0 +1,29 @@
+<!-- ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortfolioPost from '../../components/PortfolioPost.astro'
+
+export async function getStaticPaths() {
+  const allProjects = Object.values(import.meta.glob('../projects/*.md', { eager: true }));
+  const uniqueTags = [...new Set(allProjects.map((project: any) => project.frontmatter.tags).flat())];
+  return uniqueTags.map((tag) => {
+    const filteredProjects = allProjects.filter((project: any) => project.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { projects: filteredProjects },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+const filteredProjects = projects.filter((project: any) => project.frontmatter.tags?.includes(tag));
+const bgColour = "#2b3f42"
+const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
+---
+<BaseLayout pageTitle="My portfolio" bgColour = {bgColour} bgImage = {bgImage}>
+  <p>this is a portfolio of all my technical projects... there is much to come dont worry!</p>
+  <p>My {tag} projects:</p>
+  <div class = "project-wall">
+    {filteredProjects.map((project: any) => <PortfolioPost title = {project.frontmatter.title} image = {project.frontmatter.image.url} description = {project.frontmatter.description} link = {project.frontmatter.link}/>)}
+  </div>
+</BaseLayout> -->
