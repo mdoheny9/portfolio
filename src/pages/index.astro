@@ -1,10 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import HomeLayout from "../layouts/HomeLayout.astro"
 
 const pageTitle = "Welcome!"
-const bgImage = "../../assets/backgrounds/landscape01.png"
+// const bgImage = "../../assets/backgrounds/landscape01.png"
+const bgColour = "#291b13";
+
 ---
-<BaseLayout pageTitle = {pageTitle} bgImage = {bgImage}>
+<HomeLayout/>
+<div class = "spacer"></div>
+<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
 	<a href = "https://github.com/mdoheny9" target="_blank">
 		GitHub
 	</a> /
@@ -17,6 +22,7 @@ const bgImage = "../../assets/backgrounds/landscape01.png"
 	<p>
 		Hi, my name is Megan and this is my website! 
 	</p>
+	
 	<a href = "pages/portfolio/portfolio.html">
 		My Portfolio! /
 	</a>
@@ -25,3 +31,8 @@ const bgImage = "../../assets/backgrounds/landscape01.png"
 	</a>
 	<p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p>
 </BaseLayout>
+<style>
+	.spacer {
+		margin-top: 33rem;
+	}
+</style>
