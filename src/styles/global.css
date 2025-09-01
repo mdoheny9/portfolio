@@ -11,8 +11,7 @@
 body {
     font-family: DefaultFont;
     background-color: rgb(64,64,64);
-    margin-right: 10rem;
-    margin-left: 10rem;
+    
 }
 html::-webkit-scrollbar {
         display: none;
@@ -24,6 +23,8 @@ html::-webkit-scrollbar {
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
 }
 
 .navheader h1 {
@@ -57,6 +58,8 @@ html::-webkit-scrollbar {
     border-image-slice: 13 fill;
 
     margin-bottom: 1rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
 }
 
 .navbar a {
@@ -100,6 +103,8 @@ html::-webkit-scrollbar {
     border: 1rem solid transparent;
     border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
+    margin-right: 10rem;
+    margin-left: 10rem;
 }
 
 .content a {

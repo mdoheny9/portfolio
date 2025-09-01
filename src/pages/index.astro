@@ -5,46 +5,128 @@ import HomeLayout from "../layouts/HomeLayout.astro"
 const pageTitle = "Welcome!"
 const bgImage = "../../assets/backgrounds/Layer61.png";
 const bgColour = "#291b13";
-
 ---
-<HomeLayout/>
-<div class = "spacer"></div>
-<!-- <img class="layer-06" src ="../../assets/backgrounds/Layer61.png"/> -->
-<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
-	<a href = "https://github.com/mdoheny9" target="_blank">
-		GitHub
-	</a> /
-	<a href = "https://www.linkedin.com/in/megan-doheny" target="_blank">
-		LinkedIn
-	</a> /
-	<a href = "mailto:megand0905@gmail.com" target="_blank">
-		email
-	</a>
-	<p>
-		Hi, my name is Megan and this is my website! 
-	</p>
-	
-	<a href = "pages/portfolio/portfolio.html">
-		My Portfolio! /
-	</a>
-	<a href = "pages/weather/weatherpage.html">
-		See the weather
-	</a>
-	<p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p>
-</BaseLayout>
+<!-- <div class = "keyart" id = "nonparallax"></div> -->
+<div class = "keyart" id = "parallax">
+	<div class = "keyart_layer parallax" id= "keyart-0" data-speed = "5"></div>
+	<div class = "keyart_layer parallax" id= "keyart-1" data-speed = "11"></div>
+	<div class = "keyart_layer parallax" id= "keyart-2" data-speed = "16"></div>
+	<div class = "keyart_layer parallax" id= "keyart-3" data-speed = "26"></div>
+	<div class = "keyart_layer parallax" id= "keyart-7" data-speed = "30"></div>
+	<div class = "keyart_layer parallax" id= "keyart-4" data-speed = "36"></div>
+	<div class = "keyart_layer parallax" id= "keyart-5" data-speed = "69"></div>
+	<div class = "keyart_layer parallax" id= "keyart-6" data-speed = "100"></div>
+</div>
+
+<div class = "maincontain">
+	<BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
+		<a href = "https://github.com/mdoheny9" target="_blank">
+			GitHub
+		</a> /
+		<a href = "https://www.linkedin.com/in/megan-doheny" target="_blank">
+			LinkedIn
+		</a> /
+		<a href = "mailto:megand0905@gmail.com" target="_blank">
+			email
+		</a>
+		<p>
+			Hi, my name is Megan and this is my website! 
+		</p>
+		
+		<a href = "pages/portfolio/portfolio.html">
+			My Portfolio! /
+		</a>
+		<a href = "pages/weather/weatherpage.html">
+			See the weather
+		</a>
+		<p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p><p>content</p>
+	</BaseLayout>
+</div>
+
 <style>
-	.spacer {
-		/* margin-top: 50rem; */
+.keyart, .keyart_layer {
+	height: 160vh;
+}
+
+#parallax {
+	display: block;
+}
+/* #nonparallax {
+	display: block;
+} */
+/* 
+#nonparallax {
+	background-image: url('../images/keyart-mobile.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+} */
+
+.keyart {
+	position: relative;
+	top: 0;
+	z-index: -1;
+}
+
+.keyart_layer {
+	background-position: top center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	position: absolute;
+	will-change: transform;
+}
+.keyart_layer.parallax {
+	position: fixed;
+}
+	#keyart-1 {
+		background-image: url("../../assets/backgrounds/Layer001.png");
 	}
-	/* .layer-06 {
-		position: relative;
-		left: -10rem;
-		top: 0;
-		width: 150%;
-		z-index: 1;
+	#keyart-2 {
+		background-image: url("../../assets/backgrounds/Layer002.png");
 	}
-	.special {
-		position: relative;
-		z-index: 2; 
-	} */
+	#keyart-3 {
+		background-image: url("../../assets/backgrounds/Layer003.png");
+	}
+	#keyart-4 {
+		background-image: url("../../assets/backgrounds/Layer004.png");
+	}
+	#keyart-5 {
+		background-image: url("../../assets/backgrounds/Layer005.png");
+	}
+	#keyart-6 {
+		background-image: url("../../assets/backgrounds/Layer006.png");
+	}
+	#keyart-7 {
+		background-image: url("../../assets/backgrounds/Title.png");
+		background-size: 90%;
+		top: 5rem;
+		opacity: 85%;
+	}
+.maincontain {
+	position: relative;
+	z-index: 98;
+
+	background-color: #291b13; /* solid background to cover them */
+	width: 100vw;
+  	margin-left: calc(50% - 50vw); /* center full-width background */
+}
 </style>
+<script>
+	function castParallax() {
+			window.addEventListener("scroll", function () {
+				var top = this.pageYOffset;
+				var layers = document.getElementsByClassName("parallax");
+
+				for (var i = 0; i < layers.length; i++) {
+					var layer = layers[i];
+					var speed = layer.getAttribute("data-speed");
+					var yPos = -(top * speed / 100);
+
+					layer.style.transform = "translate3d(0px, " + yPos + "px, 0px)";
+					layer.style.display = "block"; // just in case
+				}
+			});
+	}
+	castParallax();
+</script>
