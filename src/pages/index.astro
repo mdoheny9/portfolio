@@ -3,12 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import HomeLayout from "../layouts/HomeLayout.astro"
 
 const pageTitle = "Welcome!"
-// const bgImage = "../../assets/backgrounds/landscape01.png"
+const bgImage = "../../assets/backgrounds/Layer61.png";
 const bgColour = "#291b13";
 
 ---
 <HomeLayout/>
 <div class = "spacer"></div>
+<!-- <img class="layer-06" src ="../../assets/backgrounds/Layer61.png"/> -->
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour}>
 	<a href = "https://github.com/mdoheny9" target="_blank">
 		GitHub
@@ -33,6 +34,17 @@ const bgColour = "#291b13";
 </BaseLayout>
 <style>
 	.spacer {
-		margin-top: 33rem;
+		/* margin-top: 50rem; */
 	}
+	/* .layer-06 {
+		position: relative;
+		left: -10rem;
+		top: 0;
+		width: 150%;
+		z-index: 1;
+	}
+	.special {
+		position: relative;
+		z-index: 2; 
+	} */
 </style>
