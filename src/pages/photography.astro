@@ -2,9 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 import PhotoPost from "../components/PhotoPost.astro"
 
-const pageTitle = "My photos"
-const bgColour = "#182847"
-const bgImage = "https://transparenttextures.com/patterns/exclusive-paper.png";
+const pageTitle = "Photos I've taken"
+export const bgColour = "#182847"
+export const bgImage = "https://transparenttextures.com/patterns/exclusive-paper.png";
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 
 const sortedPosts = allPosts.slice().sort((a:any, b:any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());

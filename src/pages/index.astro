@@ -1,12 +1,13 @@
 ---
+import '../styles/global.css';
 import BaseLayout from "../layouts/BaseLayout.astro"
 import HomeLayout from "../layouts/HomeLayout.astro"
 import Header from "../components/Header.astro"
 
-import About from "./About.astro"
-import Portfolio from "./Portfolio.astro"
-import Photography from "./Photography.astro"
-import Contact from "./Contact.astro"
+import About, { bgColour as aboutBg, bgImage as aboutImg } from "./About.astro";
+import Portfolio, { bgColour as portfolioBg, bgImage as portfolioImg } from "./Portfolio.astro";
+import Photography, { bgColour as photoBg, bgImage as photoImg } from "./Photography.astro";
+import Contact, { bgColour as contactBg, bgImage as contactImg } from "./Contact.astro";
 
 const pageTitle = "Welcome!"
 const bgImage = "../../assets/backgrounds/Layer61.png";
@@ -24,12 +25,13 @@ const bgColour = "#291b13";
 	<div class = "keyart_layer parallax" id= "keyart-6" data-speed = "100"></div>
 </div>
 
-<div class = "maincontain">
+
+<div class="maincontain">
 	<Header />
-	<section id="about"><About /></section>
-	<section id="portfolio"><Portfolio /></section>
-	<section id = "photography"><Photography /></section>
-	<section id = "contact"><Contact /></section>
+	<section id="about" data-bg={aboutBg} data-image={aboutImg}><About /></section>
+	<section id="portfolio" data-bg={portfolioBg} data-image={portfolioImg}><Portfolio /></section>
+	<section id="photography" data-bg={photoBg} data-image={photoImg}><Photography /></section>
+	<section id="contact" data-bg={contactBg} data-image={contactImg}><Contact /></section>
 </div>
 
 <style>
@@ -92,16 +94,37 @@ const bgColour = "#291b13";
 		top: 7rem;
 		opacity: 85%;
 	}
-.maincontain {
-	position: relative;
-	z-index: 98;
-
-	background-color: #291b13;
-	width: 100vw;
-  	margin-left: calc(50% - 50vw)
-}
 </style>
 <script>
+	// document.addEventListener("DOMContentLoaded", function () {
+	// 	const sections = document.querySelectorAll("section[id]"); // get sections from index.astro
+	// 	const navLinks = document.querySelectorAll(".navbar a"); // get sections from navbar
+
+	// 	const observer = new IntersectionObserver((entries) => {
+	// 		entries.forEach(entry => {
+	// 			if (entry.isIntersecting) {
+	// 				const bgColor = entry.target.dataset.bg;
+    //     			const bgImage = entry.target.dataset.image;
+	// 				if (bgImage) {
+	// 					mainContain.style.background = `url(${bgImage}) no-repeat center center/cover`;
+	// 				} else if (bgColor) {
+	// 					mainContain.style.background = bgColor;
+	// 				} else {
+	// 					mainContain.style.background = ""; // Reset if no attributes
+	// 				}
+	// 				// navLinks.forEach(link => {
+	// 				// 	link.classList.toggle(
+	// 				// 		"active",
+	// 				// 		link.getAttribute("href") === "#" + entry.target.id
+	// 				// 	);
+	// 				// });
+	// 			}
+	// 		});
+	// 	}, { threshold: 0.3 }); // section is "active" if at least 30% in viewport (maximum threshold for photography)
+
+	// 	sections.forEach(section => observer.observe(section));
+	// });
+
 	function castParallax() {
 			window.addEventListener("scroll", function () {
 				var top = this.pageYOffset;
@@ -118,4 +141,40 @@ const bgColour = "#291b13";
 			});
 	}
 	castParallax();
+
+	document.addEventListener("DOMContentLoaded", function () {
+	const sections = document.querySelectorAll("section[id]");
+	const mainContain = document.querySelector(".maincontain");
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			const bgColor = entry.target.dataset.bg;
+         	const bgImage = entry.target.dataset.image;
+			if (bgColor && bgImage) {
+
+			}
+			if (bgImage && bgColor) {
+				// Set both background color and image
+				mainContain.style.background = `${bgColor} url(${bgImage})`;
+				} else if (bgImage) {
+				// Only image
+				mainContain.style.background = `url(${bgImage})`;
+				} else if (bgColor) {
+				// Only color
+				mainContain.style.background = bgColor;
+				} else {
+				// Fallback if neither is provided
+				mainContain.style.background = "black";
+				}
+
+			// mainContain.style.background: = bgColor;
+			// mainContain.style.background = `url(${bgImage}) no-repeat center center / cover`;		
+		}
+		});
+	}, { threshold: 0.3 });
+
+	sections.forEach(section => observer.observe(section));
+	});
+
 </script>

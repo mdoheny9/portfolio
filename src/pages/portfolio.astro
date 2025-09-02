@@ -2,9 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 import PortfolioPost from "../components/PortfolioPost.astro"
 
-const pageTitle = "My portfolio"
-const bgColour = "#2b3f42"
-const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
+const pageTitle = "Things I've made"
+export const bgColour = "#2b3f42"
+export const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
 
 const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
 const tags = [...new Set(allProjects.map((project: any) => project.frontmatter.tags).flat())];
