@@ -1,38 +1,46 @@
 ---
 ---
 <div class = "navbar">
-    <!--Home button -->
-    <a href = index.html>
+    <!-- Home button -->
+    <a href = "#about">
         <img class="icon" src="../../assets/gfx/star.png" alt="">
         Home
     </a>
-    <!--Portfolio button -->
-    <a href=portfolio.html>
+    <!-- Portfolio button -->
+    <a href="#portfolio">
         <img class="icon" src="../../assets/gfx/star.png" alt="">
         Portfolio
     </a>
-    <a href=photography.html>
+    <!-- Photography button -->
+    <a href="#photography">
         <img class="icon" src="../../assets/gfx/star.png" alt="">
         Photography
     </a>
-    <a href="contact.html">
+    <!-- Contact button -->
+    <a href="#contact">
         <img class="icon" src="../../assets/gfx/star.png" alt="">
         Contact
     </a>
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-                // Get the current page path (e.g., "index.html", "portfolio.html")
-                const currentPage = window.location.pathname.split("/").pop();
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id]"); // get sections from index.astro
+    const navLinks = document.querySelectorAll(".navbar a"); // get sections from navbar
 
-                // Loop through all navbar links
-                document.querySelectorAll(".navbar a").forEach(link => {
-                    const linkPage = link.getAttribute("href").split("/").pop();
-
-                    if (linkPage === currentPage) {
-                        link.classList.add("active");
-                    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") === "#" + entry.target.id
+                    );
                 });
-            });
+            }
+        });
+    }, { threshold: 0.3 }); // section is "active" if at least 30% in viewport (maximum threshold for photography)
+
+    sections.forEach(section => observer.observe(section));
+});
 </script>
