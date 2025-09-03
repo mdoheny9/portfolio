@@ -9,7 +9,7 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
 ---
 <div class="thumbnail">
     <img 
-        src={`../../public/assets/photos/thumbnails/${image}`}
+        src={`/assets/photos/thumbnails/${image}`}
         alt={title}
         class="thumbnail-info"
         onclick={`document.getElementById('${modalId}').classList.add('active')`}
@@ -22,7 +22,7 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
 <div id={modalId} class="modal" onclick="this.classList.remove('active')">
   <div class="modal-content" onclick="event.stopPropagation()">
     <span class="close-btn" onclick={`document.getElementById('${modalId}').classList.remove('active')`}>&times;</span>
-    <img src={`../../public/assets/photos/${image}`} alt={title} loading="lazy" />
+    <img src={`/assets/photos/${image}`} alt={title} loading="lazy" />
     <div class = "photo-info">
         <p>{description}</p>
         <p style="color:rgba(170,170,170,.6)">Taken on {formattedDate} using {camera}</p>
