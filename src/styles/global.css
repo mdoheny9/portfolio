@@ -30,6 +30,7 @@ html::-webkit-scrollbar {
 .navheader h1 {
     margin-right: auto;
     background: linear-gradient(90deg, #FF4500, #FFD700);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -64,12 +65,6 @@ html::-webkit-scrollbar {
     /* margin-bottom: 2rem; */
     margin-right: 18rem;
     margin-left: 18rem;
-}
-
-.navheader, .navbar {
-    /* position: sticky; */
-    /* top: 0;
-    left: 0; */
 }
 
 .navbar a {
