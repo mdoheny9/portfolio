@@ -25,14 +25,16 @@ const bgColour = "#291b13";
 </footer>
 
 <script>
-	const sections = [...document.querySelectorAll('section')];
-	const mainContain = document.querySelector('.maincontain');
+	const sections = [...document.querySelectorAll<HTMLElement>('section')];
+	const mainContain = document.querySelector<HTMLElement>('.maincontain');
 
-	const handleIntersect = (entries) => {
+	const handleIntersect = (entries: IntersectionObserverEntry[]) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				const bgColor = entry.target.dataset.bg;
-				const bgImage = entry.target.dataset.image;
+				const target = entry.target as HTMLElement;
+				const bgColor = target.dataset.bg ?? ""; // explicitly cast fallback as ""
+				const bgImage = target.dataset.image ?? "";
+				if (!mainContain) return; // ensure mainContain
 				if (bgImage && bgColor) {
 					mainContain.style.background = `${bgColor} url(${bgImage})`;
 				} else if (bgImage) {
@@ -45,7 +47,7 @@ const bgColour = "#291b13";
 	};
 
 	sections.forEach(section => {
-		const threshold = parseFloat(section.dataset.threshold) || 0.5; // default 0.5
+		const threshold = parseFloat(section.dataset.threshold ?? "") || 0.5; // default 0.5, explicitly cast fallback as ""
 		const observer = new IntersectionObserver(handleIntersect, { threshold });
 		observer.observe(section);
 	});
