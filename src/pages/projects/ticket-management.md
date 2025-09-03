@@ -4,6 +4,6 @@ description: "A ticket queue management system simulating concert entry based on
 image:
     url: ""
     alt: "LCD displaying \"Hello World\" connected to Arduino board"
-link: ""
-tags: ["collaborative", "web-design", "test-automation"]
+link: "https://github.com/mdoheny9/CSC115-Spring2024/tree/main/assignments/assignment7"
+tags: ["java", "test-automation"]
 ---

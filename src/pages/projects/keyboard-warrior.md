@@ -1,5 +1,5 @@
 ---
-title: "Lexicide"
+title: "Typing Game"
 description: "A 2D typing-based action game built to improve reaction time and typing skills."
 image:
     url: ""
