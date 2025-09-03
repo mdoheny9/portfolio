@@ -5,7 +5,7 @@
 /* font stuff */
 @font-face {
   font-family: DefaultFont;
-  src: url("../../assets/fonts/GentiumBookBasic-Regular.ttf");
+  src: url("../../public/assets/fonts/GentiumBookBasic-Regular.ttf");
 }
 
 body {
@@ -59,7 +59,7 @@ html::-webkit-scrollbar {
     gap: 2rem;
     padding: 0rem 1rem;
     border: 1rem solid transparent;
-    border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
+    border-image: url("../../public/assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
 
     /* margin-bottom: 2rem; */
@@ -94,7 +94,7 @@ html::-webkit-scrollbar {
 }
 
 .navbar a:hover .icon {
-    content: url("../../assets/gfx/staronhover.png");
+    content: url("../../public/assets/gfx/staronhover.png");
 }
 
 .navbar .active {
@@ -106,7 +106,7 @@ html::-webkit-scrollbar {
 .content {
     color: #c7c7c7;
     border: 1rem solid transparent;
-    border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
+    border-image: url("../../public/assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
     margin-right: 11rem;
     margin-left: 11rem;
@@ -169,7 +169,7 @@ footer {
     width: 18rem;
 
     border: 1rem solid transparent;
-    border-image: url("../../assets/borders/panel-007-transparent.png");
+    border-image: url("../../public/assets/borders/panel-007-transparent.png");
     border-image-slice: 14 fill;
 
     transition: transform 0.1s ease-in-out;
@@ -217,7 +217,7 @@ footer {
     gap: 1rem;
 
     border: 1rem solid transparent;
-    border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
+    border-image: url("../../public/assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
     overflow: hidden;
 }
@@ -411,25 +411,25 @@ section {
 	position: fixed;
 }
 	#keyart-1 {
-		background-image: url("../../assets/backgrounds/Layer001-min.png");
+		background-image: url("../../public/assets/backgrounds/Layer001-min.png");
 	}
 	#keyart-2 {
-		background-image: url("../../assets/backgrounds/Layer002-min.png");
+		background-image: url("../../public/assets/backgrounds/Layer002-min.png");
 	}
 	#keyart-3 {
-		background-image: url("../../assets/backgrounds/Layer003-min.png");
+		background-image: url("../../public/assets/backgrounds/Layer003-min.png");
 	}
 	#keyart-4 {
-		background-image: url("../../assets/backgrounds/Layer004-min.png");
+		background-image: url("../../public/assets/backgrounds/Layer004-min.png");
 	}
 	#keyart-5 {
-		background-image: url("../../assets/backgrounds/Layer005-min.png");
+		background-image: url("../../public/assets/backgrounds/Layer005-min.png");
 	}
 	#keyart-6 {
-		background-image: url("../../assets/backgrounds/Layer006.png");
+		background-image: url("../../public/assets/backgrounds/Layer006.png");
 	}
 	#keyart-7 {
-		background-image: url("../../assets/backgrounds/Title.png");
+		background-image: url("../../public/assets/backgrounds/Title.png");
 		background-size: 90%;
 		top: 7rem;
 		opacity: 85%;
