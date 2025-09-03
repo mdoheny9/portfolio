@@ -14,16 +14,7 @@ body {
     
 }
 html::-webkit-scrollbar {
-        display: none;
-}
-
-.maincontain {
-	position: relative;
-	z-index: 98;
-    
-	width: 100vw;
-  	margin-left: calc(50% - 50vw);
-    transition: background-color 0.6s linear;
+    display: none;
 }
 
 /* ========= navheader ========= */
@@ -70,7 +61,7 @@ html::-webkit-scrollbar {
     border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
 
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     margin-right: 18rem;
     margin-left: 18rem;
 }
@@ -122,13 +113,27 @@ html::-webkit-scrollbar {
     border: 1rem solid transparent;
     border-image: url("../../assets/borders/panel-transparent-center-030-dark.png");
     border-image-slice: 13 fill;
-    margin-right: 10rem;
-    margin-left: 10rem;
+    margin-right: 11rem;
+    margin-left: 11rem;
     margin-top: 2rem;
+    margin-bottom: 7rem;
 }
 
-.content a {
-    color: #40E0D0;
+.maincontain {
+	position: relative;
+	z-index: 98;
+
+	width: 100vw;
+  	margin-left: calc(50% - 50vw);
+    padding-bottom: 3rem;
+    transition: background-color 1s ease-in-out;
+    background-color: #291b13;
+}
+
+footer {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #2b2b47 20%, #000033 100%);
 }
 
 /* ========= photo modal ========= */
@@ -369,4 +374,7 @@ html::-webkit-scrollbar {
 }
 .tag[data-tag="web-design"] {
   order: -1;
+}
+section {
+    scroll-margin-top: 8rem; /* adjust this to match navbar height */
 }

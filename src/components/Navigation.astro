@@ -22,25 +22,40 @@
         Contact
     </a>
 </div>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section[id]"); // get sections from index.astro
-    const navLinks = document.querySelectorAll(".navbar a"); // get sections from navbar
+    const sections = [...document.querySelectorAll('section')];
+    const navLinks = document.querySelectorAll(".navbar a");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
+    const handleIntersect = (entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				navLinks.forEach(link => {
                     link.classList.toggle(
                         "active",
                         link.getAttribute("href") === "#" + entry.target.id
                     );
                 });
+			}
+		});
+	};
+
+    sections.forEach(section => {
+		const threshold = parseFloat(section.dataset.threshold) || 0.5; // default 0.5
+		const observer = new IntersectionObserver(handleIntersect, { threshold });
+		observer.observe(section);
+	});
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault(); // Prevent default jump
+            const targetId = this.getAttribute("href").substring(1); // remove #
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             }
         });
-    }, { threshold: 0.3 }); // section is "active" if at least 30% in viewport (maximum threshold for photography)
-
-    sections.forEach(section => observer.observe(section));
-});
+    });
 </script>
