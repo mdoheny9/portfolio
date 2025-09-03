@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^4.1.0",
     "astro": "^5.13.3",
-    "free-astro-components": "^1.2.1"
+    "free-astro-components": "^1.2.1",
+    "preact": "^10.27.1"
   }
 }

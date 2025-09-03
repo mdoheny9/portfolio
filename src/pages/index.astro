@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import BaseLayout from "../layouts/BaseLayout.astro"
-import HomeLayout from "../layouts/HomeLayout.astro"
 import Header from "../components/Header.astro"
+import Parallax from "../components/Parallax"
 
 import About, { bgColour as aboutBg, bgImage as aboutImg } from "./About.astro";
 import Portfolio, { bgColour as portfolioBg, bgImage as portfolioImg } from "./Portfolio.astro";
@@ -13,19 +13,7 @@ const pageTitle = "Welcome!"
 const bgImage = "../../assets/backgrounds/Layer61.png";
 const bgColour = "#291b13";
 ---
-<!-- <div class = "keyart" id = "nonparallax"></div> -->
-<div class = "keyart" id = "parallax">
-	<div class = "keyart_layer parallax" id= "keyart-0" data-speed = "5"></div>
-	<div class = "keyart_layer parallax" id= "keyart-1" data-speed = "11"></div>
-	<div class = "keyart_layer parallax" id= "keyart-2" data-speed = "16"></div>
-	<div class = "keyart_layer parallax" id= "keyart-7" data-speed = "20"></div>
-	<div class = "keyart_layer parallax" id= "keyart-3" data-speed = "26"></div>
-	<div class = "keyart_layer parallax" id= "keyart-4" data-speed = "36"></div>
-	<div class = "keyart_layer parallax" id= "keyart-5" data-speed = "69"></div>
-	<div class = "keyart_layer parallax" id= "keyart-6" data-speed = "100"></div>
-</div>
-
-
+<Parallax client:visible />
 <div class="maincontain">
 	<Header />
 	<section id="about" data-threshold = ".8" data-bg={aboutBg} data-image={aboutImg}><About /></section>
@@ -36,86 +24,7 @@ const bgColour = "#291b13";
 <footer>
 </footer>
 
-<style>
-.keyart, .keyart_layer {
-	height: 160vh;
-}
-
-#parallax {
-	display: block;
-}
-/* #nonparallax {
-	display: block;
-} */
-/* 
-#nonparallax {
-	background-image: url('../images/keyart-mobile.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: auto 100%;
-} */
-
-.keyart {
-	position: relative;
-	top: 0;
-	z-index: -1;
-}
-
-.keyart_layer {
-	background-position: top center;
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	width: 100%;
-	position: absolute;
-	will-change: transform;
-}
-.keyart_layer.parallax {
-	position: fixed;
-}
-	#keyart-1 {
-		background-image: url("../../assets/backgrounds/Layer001-min.png");
-	}
-	#keyart-2 {
-		background-image: url("../../assets/backgrounds/Layer002-min.png");
-	}
-	#keyart-3 {
-		background-image: url("../../assets/backgrounds/Layer003-min.png");
-	}
-	#keyart-4 {
-		background-image: url("../../assets/backgrounds/Layer004-min.png");
-	}
-	#keyart-5 {
-		background-image: url("../../assets/backgrounds/Layer005-min.png");
-	}
-	#keyart-6 {
-		background-image: url("../../assets/backgrounds/Layer006.png");
-	}
-	#keyart-7 {
-		background-image: url("../../assets/backgrounds/Title.png");
-		background-size: 90%;
-		top: 7rem;
-		opacity: 85%;
-	}
-</style>
 <script>
-	function castParallax() {
-			window.addEventListener("scroll", function () {
-				var top = this.pageYOffset;
-				var layers = document.getElementsByClassName("parallax");
-
-				for (var i = 0; i < layers.length; i++) {
-					var layer = layers[i];
-					var speed = layer.getAttribute("data-speed");
-					var yPos = -(top * speed / 100);
-
-					layer.style.transform = "translate3d(0px, " + yPos + "px, 0px)";
-					layer.style.display = "block";
-				}
-			});
-	}
-	castParallax();
-
-
 	const sections = [...document.querySelectorAll('section')];
 	const mainContain = document.querySelector('.maincontain');
 

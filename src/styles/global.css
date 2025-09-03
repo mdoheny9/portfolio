@@ -378,3 +378,64 @@ footer {
 section {
     scroll-margin-top: 8rem; /* adjust this to match navbar height */
 }
+
+/* parallax stuff */
+.keyart, .keyart_layer {
+	height: 160vh;
+}
+
+#parallax {
+	display: block;
+}
+/* #nonparallax {
+	display: block;
+} */
+/* 
+#nonparallax {
+	background-image: url('../images/keyart-mobile.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+} */
+
+.keyart {
+	position: relative;
+	top: 0;
+	z-index: -1;
+}
+
+.keyart_layer {
+	background-position: top center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	position: absolute;
+	will-change: transform;
+}
+.keyart_layer.parallax {
+	position: fixed;
+}
+	#keyart-1 {
+		background-image: url("../../assets/backgrounds/Layer001-min.png");
+	}
+	#keyart-2 {
+		background-image: url("../../assets/backgrounds/Layer002-min.png");
+	}
+	#keyart-3 {
+		background-image: url("../../assets/backgrounds/Layer003-min.png");
+	}
+	#keyart-4 {
+		background-image: url("../../assets/backgrounds/Layer004-min.png");
+	}
+	#keyart-5 {
+		background-image: url("../../assets/backgrounds/Layer005-min.png");
+	}
+	#keyart-6 {
+		background-image: url("../../assets/backgrounds/Layer006.png");
+	}
+	#keyart-7 {
+		background-image: url("../../assets/backgrounds/Title.png");
+		background-size: 90%;
+		top: 7rem;
+		opacity: 85%;
+	}

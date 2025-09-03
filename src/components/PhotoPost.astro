@@ -7,11 +7,6 @@ if (date) {
 }
 const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
 ---
-<!-- Thumbnail -->
-<!-- for tooltip:
-    onmousemove="showTooltip(event)"
-    onmouseleave="hideTooltip(event)"
--->
 <div class="thumbnail">
     <img 
         src={`../../assets/photos/${image}`}
@@ -19,7 +14,6 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
         class="thumbnail-info"
         onclick={`document.getElementById('${modalId}').classList.add('active')`}
     />
-    <!-- <span class="tooltip">{title}</span> -->
 </div>
 
 <!-- Modal -->
@@ -28,24 +22,8 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
     <span class="close-btn" onclick={`document.getElementById('${modalId}').classList.remove('active')`}>&times;</span>
     <img src={`../../assets/photos/${image}`} alt={title} />
     <div class = "photo-info">
-        <!-- <h2>{title}</h2> -->
         <p>{description}</p>
         <p style="color:rgba(170,170,170,.6)">Taken on {formattedDate} using {camera}</p>
     </div>
   </div>
 </div>
-
-<!-- for tooltip: -->
-<!-- <script>
-    function showTooltip(e) {
-        const tooltip = e.currentTarget.nextElementSibling; // the tooltip span
-        tooltip.style.display = "block";
-        tooltip.style.left = e.offsetX + 15 + "px"; // relative to image
-        tooltip.style.top = e.offsetY + 15 + "px";
-    }
-
-    function hideTooltip(e) {
-        const tooltip = e.currentTarget.nextElementSibling;
-        tooltip.style.display = "none";
-    }
-</script> -->
