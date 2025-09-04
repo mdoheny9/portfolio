@@ -6,5 +6,5 @@ camera: 'Nikon D3100'
 image:
     url: 'snowbirds.png'
     alt: 'Snowbirds flying in formation'
-tags: []
+link: "https://www.instagram.com/p/DOAc1LFjqsT/?img_index=1"
 ---

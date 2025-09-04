@@ -1,5 +1,5 @@
 ---
-const { title, description, image, date, camera } = Astro.props;
+const { title, description, image, date, camera, link } = Astro.props;
 let formattedDate = date;
 if (date) {
   const d = new Date(date);
@@ -22,7 +22,7 @@ const modalId = `modal-id-${title.replace(/\s+/g, '-').toLowerCase()}`;
 <div id={modalId} class="modal" onclick="this.classList.remove('active')">
   <div class="modal-content" onclick="event.stopPropagation()">
     <span class="close-btn" onclick={`document.getElementById('${modalId}').classList.remove('active')`}>&times;</span>
-    <img src={`/assets/photos/${image}`} alt={title} loading="lazy" />
+    <img src={`/assets/photos/${image}`} alt={title} loading="lazy" onclick=`window.open("${link}")`/>
     <div class = "photo-info">
         <p>{description}</p>
         <p style="color:rgba(170,170,170,.6)">Taken on {formattedDate} using {camera}</p>

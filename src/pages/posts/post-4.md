@@ -1,7 +1,7 @@
 ---
-title: 'Postgresquirrel'
+title: 'Angry Squirrel'
 pubDate: 2025-08-26
-description: 'Overly active squirrel who was very defensive of his nest.'
+description: 'Postgresquirrel'
 camera: 'Nikon D3100'
 image:
     url: 'squirrel.jpg'

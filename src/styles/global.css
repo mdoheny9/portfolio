@@ -238,6 +238,7 @@ footer {
     height: auto;
     margin: auto;
     border-radius: .5rem;
+    cursor: pointer;
 }
 .modal-content .portfolio {
     max-width: 75%;

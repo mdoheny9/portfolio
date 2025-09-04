@@ -6,5 +6,5 @@ camera: 'Nikon D3100'
 image:
     url: 'holivia.jpg'
     alt: 'Olivia in the sunset'
-tags: ["long-exposure", "collaborative"]
+link: "https://www.instagram.com/p/DN9l66TEeEn/"
 ---

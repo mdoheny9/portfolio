@@ -22,8 +22,8 @@ export const bgImage = "https://transparenttextures.com/patterns/tex2res4.png";
     </div>
     <div class="gallery">
         {sortedPosts.map((post:any) => {
-            const {title, pubDate, description, camera, image, tags} = post.frontmatter;
-            return (<PhotoPost title = {title} image = {image.url} description = {description} date = {pubDate} camera = {camera}/>);
+            const {title, pubDate, description, camera, image, link} = post.frontmatter;
+            return (<PhotoPost title = {title} image = {image.url} description = {description} date = {pubDate} camera = {camera} link = {link}/>);
         })}
     </div>
 </BaseLayout>
