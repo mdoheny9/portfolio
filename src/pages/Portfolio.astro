@@ -10,22 +10,23 @@ export const bgColour = "#2b3f42"
 export const bgImage = "https://transparenttextures.com/patterns/subtle-carbon.png"
 ---
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour} bgImage = {bgImage}>
-    <p>
-        Welcome to my portfolio! Here you’ll find a collection of my technical projects.
-    </p>
-    <p>
-        Use the buttons below to filter projects by category, or select All to view everything.
-    </p>
-    <p>
-        Many of the projects include photos and GitHub repository links, giving you easy 
-        access to view and use the complete code.    
-    </p>
-    <!-- tags -->
-    <div class = "tags">
-        <button class="tag active" data-tag="all">All</button>
-        {tags.map((tag) => (
-            <button class="tag" data-tag={tag}>{tag}</button>
-        ))}
+    <div id = "description">
+        <p>
+            Welcome to my portfolio! This section contains a collection of my technical projects.
+        </p>
+        <p>
+            Use the buttons below to filter by specific categories, with the option to view all projects for a complete overview.
+        </p>
+        <p>
+            Each project includes documentation, photos, and GitHub repository links so you can see how everything works and access the complete code.
+        </p>
+        <!-- tags -->
+        <div class = "tags">
+            <button class="tag active" data-tag="all">All</button>
+            {tags.map((tag) => (
+                <button class="tag" data-tag={tag}>{tag}</button>
+            ))}
+        </div>
     </div>
     <!-- projects -->
     <div class = "project-wall">

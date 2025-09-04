@@ -1,5 +1,5 @@
 ---
-title: "Arduino Embedded Programming"
+title: "Arduino Embedded Systems"
 description: "Real-time LCD message display system with timed cycling, scrolling functionality, and keypad input handling. Developed for Computer Architecture course"
 image:
     url: "arduino.jpg"

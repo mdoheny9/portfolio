@@ -6,17 +6,20 @@ const pageTitle = "Photos I've taken"
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const sortedPosts = allPosts.slice().sort((a:any, b:any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
 
-export const bgColour = "#182847"
-export const bgImage = "https://transparenttextures.com/patterns/exclusive-paper.png";
+// export const bgColour = "#182847"
+export const bgColour = "#273459"
+export const bgImage = "https://transparenttextures.com/patterns/tex2res4.png";
 ---
 
 <BaseLayout pageTitle = {pageTitle} bgColour = {bgColour} bgImage = {bgImage}>
-    <p>
-        A collection of some of the photos I have taken that I think are worth sharing.
-    </p>
-    <p>
-        Feel free to show your support by clicking on the image within the pop-up window, which opens the related post on Instagram.
-    </p>
+    <div id = "description">
+        <p>
+            A collection of some of the photos I have taken that I think are worth sharing.
+        </p>
+        <p>
+            Feel free to show your support by clicking on the image within the pop-up window, which opens the related post on Instagram.
+        </p>
+    </div>
     <div class="gallery">
         {sortedPosts.map((post:any) => {
             const {title, pubDate, description, camera, image, tags} = post.frontmatter;
