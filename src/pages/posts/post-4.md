@@ -6,5 +6,5 @@ camera: 'Nikon D3100'
 image:
     url: 'squirrel.jpg'
     alt: 'Squirrel glaring at camera'
-tags: []
+link: "https://www.instagram.com/p/DONIEaMEe6H/?img_index=1"
 ---
