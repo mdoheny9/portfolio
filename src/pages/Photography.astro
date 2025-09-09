@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import PhotoPost from "../components/PhotoPost.astro"
+import PhotoPost from "../components/Modal/PhotoPost.astro"
 
 const pageTitle = "Photos I've taken"
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));

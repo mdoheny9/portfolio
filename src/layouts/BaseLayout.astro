@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro"
 import '../styles/global.css';
 
 const {pageTitle, bgImage, bgColour} = Astro.props
@@ -12,9 +11,7 @@ const {pageTitle, bgImage, bgColour} = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class = "base-layout" style = {`background-image: url(${bgImage}); background-color: ${bgColour}`}>
-		<!-- <div class="layer-06"></div> -->
-		<!-- <Header/> -->
+	<body style = {` background-color: ${bgColour}`}>
         <div class = "content">
             <h1 id = "description">{pageTitle}</h1>
             <slot/>

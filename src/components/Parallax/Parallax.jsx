@@ -1,4 +1,5 @@
 import { useEffect } from 'preact/hooks';
+import "./Parallax.css"
 
 export default function Parallax() {
 
