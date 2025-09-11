@@ -32,7 +32,7 @@
 .navbar {
     position: sticky;
     z-index: 1000;
-    top: 2rem;
+    top: 3rem;
 
     display: flex;
     justify-content: center;
